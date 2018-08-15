@@ -1,0 +1,24 @@
+<header class="navbar navbar-fixed-top navbar-inverse bg-info">
+  <div class="container">
+    <%= link_to "Conavi", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to current_user do %>
+            <button type="button" class="btn btn-outline-light menu-btn">マイページ</button>
+          <% end %></li>
+          <li><%= link_to "#" do %>
+            <button type="button" class="btn btn-outline-light menu-btn">設定</button>
+          <% end %></li>
+        <% else %>
+          <li><%= link_to "#" do %>
+            <button type="button" class="btn btn-outline-light menu-btn">新機会員登録</button>
+          <% end %></li>
+          <li><%= link_to "#" do %>
+            <button type="button" class="btn btn-outline-light menu-btn">ログイン</button>
+          <% end %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
